@@ -19,7 +19,7 @@ function getTasks(event) { //creates the next screen? might be worth just making
 }
 
 function addTask { //take the data from the form and records it in some way
-  tasks[numTasks] = {name: --GetName--, estimatedTime: --GetTimeEstimate--};
+  tasks[numTasks] = {name: --GetName--,due: --getDue--, estimatedTime: --GetTimeEstimate--};
   timeNeeded+=tasks[numTasks].estimatedTime;
   numTasks+=1;
 }
