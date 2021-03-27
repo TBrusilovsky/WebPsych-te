@@ -30,5 +30,6 @@ function getScheduel(event) { //switches you to the scheduel screen, as before m
 }
 
 function generateScheduel() {
-
+yourScheduel[i] = {date: --, workingon: --, timeStart: --, timeend: --, timespent: --}
+  example - {date:"03272000", workingon:"hack", timeStart:"6:00", timeend: "7:00", timespent:"1"}
 }
