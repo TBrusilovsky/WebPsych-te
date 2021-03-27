@@ -3,23 +3,24 @@
   <head>
     <meta charset='UTF-8'/>
     <title>Slicker Schedueling</title>
-    <link rel='stylesheet' href='styles.css'/>
+    <link rel='stylesheet' href='style.css'/>
   </head>
 
   <body>
     <script type="text/javascript" src="script.js"></script>
     <h1>Welcome to <i>Slicker, Psycher, Schedueling<i>, your one stop shop for figuring out how to get your work done on time!</h1>
-    <h2>The first thing you need to do is tell us when you will be available to work on your work! Input any times you will be able to get work done, then click continue.</h2>
-    <dl>
+    <h2 id="instructions">The first thing you need to do is tell us when you will be available to work on your work! Input any times you will be able to get work done, then click continue.</h2>
+    <dl id="inputlist">
       <dt>Date:
-      <dd><input type="date" name="date" size="30" min="2021-03-26">
+      <dd><input type="text" id="date" size="30" placeholder="MMDDYYYY">
       <dt>Start time:
-      <dd><input type="time" name="starttime" size="30">
+      <dd><input type="text" id="starttime" size="30" placeholder="06:30 am">
       <dt>End Time:
-      <dd><input type="time" name="endtime" size="30">
+      <dd><input type="text" id="endtime" size="30" placeholder="10:30 pm">
     </dl>
-    <div class="actions"><input type="submit" value="Add time" onclick="addTime();"></div>
-    <div class="actions"><input type="button" value="Continue" onclick="getAssignments();" /></div>
+    <div class="actions"><input type="submit" value="Add Time" onclick="addTime();"></div>
+
+    <div class="continue"><input type="button" value="Continue" onclick="getTasks();" /></div>
 
   </body>
 </html>
