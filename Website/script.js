@@ -64,13 +64,14 @@ function getTasks(event) { //creates the next screen? might be worth just making
 } 
 
 function addTask() { //take the data from the form and records it in some way
-  //tasks[numTasks] = {name: --GetName--,due: --getDue--, estimatedTime: --GetTimeEstimate--};
+  tasks[numTasks] = {name:document.getElementById("starttime").value,due: document.getElementById("date").value, estimatedTime: document.getElementById("estimatedtime").value};
   timeNeeded+=tasks[numTasks].estimatedTime;
   numTasks+=1;
+  
 }
 
 function getSchedule(event) { //switches you to the schedule screen, as before might be worth just hyperlinking it
-  generateScheduel();
+  generateSchedule();
   //creates/passes in the newly made schedule
 }
 
