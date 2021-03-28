@@ -160,6 +160,7 @@ function generateSchedule() {
         start = yourSchedule[i-1].timeend;
       }
 
+
         if(i!=0){
           if(yourSchedule[i-1].timespent = 52){
             let taskEnd = minToHour((hourToMin(start)+17));
