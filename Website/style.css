@@ -2,43 +2,20 @@ h1, h2, h3, h4, h5, h6, dt {
     font-family: 'Corben', Georgia, Times, serif;
 
 }
-p, div {
-    font-family: 'Nobile', Helvetica, Arial, sans-serif;
-}
-dl {
-    padding: 8px;
-    margin-bottom: 10px;
-    margin-left: 20px;
-}
-
-body {
-    background-color: #89cff0;
-}
-input[type=text] {
-    padding: 8px;
-    margin:3px 0;
-    border: 2px solid #eee;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-}
-input[type=submit] {
-    padding: 5px;
-    margin:10px 0; // add top and bottom margin
-border: 2px solid #eee;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-}
-h1, h2, h3, h4, h5, h6, dt {
-    font-family: 'Corben', Georgia, Times, serif;
-
+h2 {
+	text-align: center;
 }
 p, div {
     font-family: 'Nobile', Helvetica, Arial, sans-serif;
 }
 dl {
-	padding: 8px;
+	padding: 0px;
 	margin-bottom: 10px;
 	margin-left: 20px;
 }
-
+dl.task {
+	padding: 8px;
+}
 body {
 	background-color: #89cff0; 
 }
@@ -48,9 +25,18 @@ input[type=text] {
 	border: 2px solid #eee;
 	box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
+
+
 input[type=submit] {
-	padding: 5px;
-	margin:10px 0; // add top and bottom margin
-	border: 2px solid #eee;
-	box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+	background: none;
+	border: 2px solid;
+	font-family: 'Nobile', Helvetica, Arial, sans-serif;
+	line-height: 1;
+	margin: 0.5em;
+	padding: .6em 1.6em;
+	text-align: center;
+}
+.divider {
+	border: 1px;
+	height: 5px;
 }

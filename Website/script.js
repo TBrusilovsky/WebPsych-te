@@ -43,7 +43,7 @@ function getTasks(event) { //creates the next screen? might be worth just making
   thingtochange.remove();
 
   let thingtoadd = document.createElement("div");
-  thingtoadd.class = "actions";
+  thingtoadd.class = "action";
   thingtoadd.id = "addEvent";
   let otherthingtoadd = document.createElement("input");
   thingtoadd.appendChild(otherthingtoadd);
@@ -52,11 +52,11 @@ function getTasks(event) { //creates the next screen? might be worth just making
   document.body.appendChild(thingtoadd);
 
   thingtoadd = document.createElement("div");
-  thingtoadd.class = "continue";
+  thingtoadd.class = "action";
   thingtoadd.id = "generate";
   otherthingtoadd = document.createElement("input");
   thingtoadd.appendChild(otherthingtoadd);
-  otherthingtoadd.type="button";  
+  otherthingtoadd.type="submit";
   otherthingtoadd.addEventListener("click",getSchedule);
   otherthingtoadd.value = "Generate My Schedule!";
   document.body.appendChild(thingtoadd);
@@ -88,9 +88,6 @@ function getSchedule(event) { //switches you to the schedule screen, as before m
     let date = document.createElement("dt");
     date.innerHTML = yourSchedule[i].date.substring(0,2) +"/"+yourSchedule[i].date.substring(2,4)+"/"+yourSchedule[i].date.substring(4,8);
     task.appendChild(date);
-    let type = document.createElement("dt");
-    type.innerHTML = yourSchedule[i].workingon;
-    task.appendChild(type);
     let from = document.createElement("dt");
     from.innerHTML = "from "+ yourSchedule[i].timeStart;
     task.appendChild(from);
@@ -98,6 +95,9 @@ function getSchedule(event) { //switches you to the schedule screen, as before m
     to.innerHTML = "to " + yourSchedule[i].timeend;
     task.appendChild(to);
     document.body.appendChild(task);
+    let type = document.createElement("dt");
+    type.innerHTML = yourSchedule[i].workingon;
+    task.appendChild(type);
   }
 
 }
