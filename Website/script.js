@@ -105,13 +105,13 @@ function calculateTime(start,end) {
 
   if (start.charAt(6) == 'p')  startDec+=12;
   if (end.charAt(6) == 'p')  endDec+=12;
-  console.log(startDec);
-  startDec+= 0+ start.substring(0,2);
-  endDec+= 0+end.substring(0,2);
-console.log(startDec);
-  startDec+= 0+start.substring(3,5)/60;
-  endDec+= 0+end.substring(3,5)/60;
-console.log(startDec);
+
+  startDec+= Number(start.substring(0,2));
+  endDec+= Number(end.substring(0,2));
+  
+  startDec+= Number(start.substring(3,5))/60;
+  endDec+= Number(end.substring(3,5))/60;
+
   return endDec-startDec;
 }
 
