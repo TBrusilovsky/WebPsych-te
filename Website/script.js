@@ -6,7 +6,7 @@ let tasks = [];
 let numTasks = 0;
 let timeNeeded = 0;
 let yourSchedule = [];
-
+let encouragements = ["Take a break, maybe grab a glass of water!", "Relax for a little while, stand up and walk around a little!", "You have some time to destress, maybe go get some fresh air?", "You've been working hard, time for a breather!","Great job, now you can afford to rest for a bit.", "detach from my workplace and first assess my physical needs (water, snacks, moving around, stretching)" ]
 
 function addTime(event) {  //takes the data from the form and records it in some way
   times[numTimes] = {date:document.getElementById("date").value, 
@@ -118,8 +118,68 @@ function calculateTime(start,end) {
   return endDec-startDec;
 }
 
+function hourToMin(time){
+  let timeInMin =0;
+  if (time.charAt(6) == 'p')  timeInMin+=(12*60);
+  timeInMin+= Number(start.substring(0,2))*60;
+  timeInMin+= Number(start.substring(3,5));
+  return timeInMin;
+}
+
+function minToHour(time){
+  let timeInHour ="";
+  if(time> (12*60)){
+    timeInHour+= "pm";
+    time-=(12*60)
+  } else{
+    timeInHour+= "am";
+  }
+  time/=60;
+  var hourVal = Math.floor(time)
+  time *= 100;
+  time -= hourVal;
+  time*=60;
+  timeInHour= hourVal + ":" +time+" "+timeInHour;
+  return timeInHour;
+}
+
 function generateSchedule() {
 //yourScheduel[i] = {date: --, workingon: --, timeStart: --, timeend: --, timespent: --}
  // example - {date:"03272000", workingon:"hack", timeStart:"6:00", timeend: "7:00", timespent:"1"}
-yourSchedule[0] = {date:"03272000", workingon:"hack", timeStart:"6:00 pm", timeend: "7:00 pm", timespent:"1"}
+  //yourSchedule[0] = {date:"03272000", workingon:"hack", timeStart:"6:00 pm", timeend: "7:00 pm", timespent:"1"}
+  for(var j=0;j<numTasks;j++){
+    let workDone = 0;
+    let breakDone = 0;
+    let complete = (Number(tasks[j].estimatedTime) = workDone);
+    let i = 0;
+    let timeTracker = 0;
+    let start = times[timeTracker].startTime;
+
+    do{
+      if(i!=0){
+        start = yourSchedule[i-1].timeend;
+      }
+
+        if(i!=0){
+          if(yourSchedule[i-1].timespent = 52){
+            let taskEnd = minToHour((hourToMin(start)+17));
+            yourSchedule[i] = {date:times[i].date, workingon: "Break time! Try"+encouragements[Math.floor((Math.random() * 10))], timeStart: start, timeend:taskEnd, timespent: 17};
+            breakDone+=17;
+          }else{
+            let taskEnd = minToHour((hourToMin(start)+52));
+            yourSchedule[i] = {date:times[i].date, workingon: tasks[i].name, timeStart: start, timeend:taskEnd, timespent: 52  };
+            workDone+=52;
+          }
+        }else {
+          yourSchedule[i] = {
+            date: times[i].date,
+            workingon: tasks[i].name,
+            timeStart: start,
+            timeend: taskEnd,
+            timespent: hourToMin(this.timeend) - hourToMin(this.timeStart)
+          }
+        }
+      complete = (tasks[j].estimatedTime = workDone);
+    }while(!(complete));
+  }
 }
