@@ -78,21 +78,21 @@ function getSchedule(event) { //switches you to the schedule screen, as before m
   toremove = document.getElementById("generate");
   toremove.remove(); 
 
-  for (task in yourSchedule)
+  for (let i = 0; i <yourSchedule.length; i++)
   {
     let task = document.createElement("dl");
     task.class = "task";
     let date = document.createElement("dt");
-    date.innerHTML = task.date;
+    date.innerHTML = yourSchedule[i].date.substring(0,2) +"/"+yourSchedule[i].date.substring(2,4)+"/"+yourSchedule[i].date.substring(4,8);
     task.appendChild(date);
     let type = document.createElement("dt");
-    type.innerHTML = task.workingon;
+    type.innerHTML = yourSchedule[i].workingon;
     task.appendChild(type);
     let from = document.createElement("dt");
-    from.innerHTML = task.timeStart;
+    from.innerHTML = "from "+ yourSchedule[i].timeStart;
     task.appendChild(from);
     let to = document.createElement("dt");
-    to.innerHTML = task.timeend;
+    to.innerHTML = "to " + yourSchedule[i].timeend;
     task.appendChild(to);
     document.body.appendChild(task);
   }
@@ -108,7 +108,7 @@ function calculateTime(start,end) {
 
   startDec+= Number(start.substring(0,2));
   endDec+= Number(end.substring(0,2));
-  
+
   startDec+= Number(start.substring(3,5))/60;
   endDec+= Number(end.substring(3,5))/60;
 
@@ -118,4 +118,5 @@ function calculateTime(start,end) {
 function generateSchedule() {
 //yourScheduel[i] = {date: --, workingon: --, timeStart: --, timeend: --, timespent: --}
  // example - {date:"03272000", workingon:"hack", timeStart:"6:00", timeend: "7:00", timespent:"1"}
+yourSchedule[0] = {date:"03272000", workingon:"hack", timeStart:"6:00 pm", timeend: "7:00 pm", timespent:"1"}
 }
