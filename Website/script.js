@@ -34,6 +34,9 @@ function getTasks(event) { //creates the next screen? might be worth just making
   thingtochange.id = "estimatedtime";
   thingtochange.placeholder = "2.5";
 
+  thingtochange = document.getElementById("starttime");
+  thingtochange.placeholder = "Java Homeworkd #5"
+
   thingtochange = document.getElementById("addTime");
   thingtochange.remove();
   thingtochange =  document.getElementById("continue");

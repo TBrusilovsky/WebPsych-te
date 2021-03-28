@@ -4,19 +4,21 @@
     <meta charset='UTF-8'/>
     <title>Slicker Schedueling</title>
     <link rel='stylesheet' href='style.css'/>
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
   </head>
 
   <body>
     <script type="text/javascript" src="script.js"></script>
-    <h1>Welcome to <i>Slicker, Psycher, Schedueling</i>, your one stop shop for figuring out how to get your work done on time!</h1>
-    <h2 id="instructions">The first thing you need to do is tell us when you will be available to work on your work! Input any times you will be able to get work done, then click continue.</h2>
+    <h2>Welcome to <i>Slicker, Psycher, Schedueling</i>, your one stop shop for figuring out how to get your work done on time!</h2>
+    <h3 id="instructions">The first thing you need to do is tell us when you will be available to work on your work! Input any times you will be able to get work done, then click continue.</h3>
     <dl id="inputlist">
       <h4 id="title1">Date:</h4> 
-      <dd><input type="text" id="date" size="30" placeholder="MMDDYYYY">
+      <dd><input type="text" id="date" size="30" placeholder="MMDDYYYY"></dd>
       <h4 id="title2">Start time:</h4>
-      <dd><input type="text" id="starttime" size="30" placeholder="06:30 am">
+      <dd><input type="text" id="starttime" size="30" placeholder="06:30 am"></dd>
       <h4 id="title3">End Time:</h4> 
-      <dd><input type="text" id="endtime" size="30" placeholder="10:30 pm">
+      <dd><input type="text" id="endtime" size="30" placeholder="10:30 pm"></dd>
     </dl>
     <div class="actions" id="addTime"><input type="submit" value="Add Time" onclick="addTime();"></div>
 
