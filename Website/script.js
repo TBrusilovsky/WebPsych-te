@@ -121,5 +121,6 @@ function calculateTime(start,end) {
 function generateSchedule() {
 //yourScheduel[i] = {date: --, workingon: --, timeStart: --, timeend: --, timespent: --}
  // example - {date:"03272000", workingon:"hack", timeStart:"6:00", timeend: "7:00", timespent:"1"}
-yourSchedule[0] = {date:"03272000", workingon:"hack", timeStart:"6:00 pm", timeend: "7:00 pm", timespent:"1"}
+  yourSchedule[0] = {date:"03272000", workingon:"hack", timeStart:"6:00 pm", timeend: "7:00 pm", timespent:"1"};
+  yourSchedule[1] = {date:"03272000", workingon:"Take a break, maybe grab a glass of water!", timeStart:"7:00 pm", timeend: "7:15 pm", timespent:".25"};
 }
