@@ -88,9 +88,6 @@ function getSchedule(event) { //switches you to the schedule screen, as before m
     let date = document.createElement("dt");
     date.innerHTML = yourSchedule[i].date.substring(0,2) +"/"+yourSchedule[i].date.substring(2,4)+"/"+yourSchedule[i].date.substring(4,8);
     task.appendChild(date);
-    let type = document.createElement("dt");
-    type.innerHTML = yourSchedule[i].workingon;
-    task.appendChild(type);
     let from = document.createElement("dt");
     from.innerHTML = "from "+ yourSchedule[i].timeStart;
     task.appendChild(from);
@@ -98,6 +95,9 @@ function getSchedule(event) { //switches you to the schedule screen, as before m
     to.innerHTML = "to " + yourSchedule[i].timeend;
     task.appendChild(to);
     document.body.appendChild(task);
+    let type = document.createElement("dt");
+    type.innerHTML = yourSchedule[i].workingon;
+    task.appendChild(type);
   }
 
 }
@@ -121,6 +121,6 @@ function calculateTime(start,end) {
 function generateSchedule() {
 //yourScheduel[i] = {date: --, workingon: --, timeStart: --, timeend: --, timespent: --}
  // example - {date:"03272000", workingon:"hack", timeStart:"6:00", timeend: "7:00", timespent:"1"}
-  yourSchedule[0] = {date:"03272000", workingon:"hack", timeStart:"6:00 pm", timeend: "7:00 pm", timespent:"1"};
+  yourSchedule[0] = {date:"03272000", workingon:"Spanish Paper", timeStart:"6:00 pm", timeend: "7:00 pm", timespent:"1"};
   yourSchedule[1] = {date:"03272000", workingon:"Take a break, maybe grab a glass of water!", timeStart:"7:00 pm", timeend: "7:15 pm", timespent:".25"};
 }
