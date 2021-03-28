@@ -8,19 +8,19 @@
 
   <body>
     <script type="text/javascript" src="script.js"></script>
-    <h1>Welcome to <i>Slicker, Psycher, Schedueling<i>, your one stop shop for figuring out how to get your work done on time!</h1>
+    <h1>Welcome to <i>Slicker, Psycher, Schedueling</i>, your one stop shop for figuring out how to get your work done on time!</h1>
     <h2 id="instructions">The first thing you need to do is tell us when you will be available to work on your work! Input any times you will be able to get work done, then click continue.</h2>
     <dl id="inputlist">
-      <dt>Date:
+      <h4 id="title1">Date:</h4> 
       <dd><input type="text" id="date" size="30" placeholder="MMDDYYYY">
-      <dt>Start time:
+      <h4 id="title2">Start time:</h4>
       <dd><input type="text" id="starttime" size="30" placeholder="06:30 am">
-      <dt>End Time:
+      <h4 id="title3">End Time:</h4> 
       <dd><input type="text" id="endtime" size="30" placeholder="10:30 pm">
     </dl>
-    <div class="actions"><input type="submit" value="Add Time" onclick="addTime();"></div>
+    <div class="actions" id="addTime"><input type="submit" value="Add Time" onclick="addTime();"></div>
 
-    <div class="continue"><input type="button" value="Continue" onclick="getTasks();" /></div>
+    <div class="continue" id="continue"><input type="button" value="Continue" onclick="getTasks();" /></div>
 
   </body>
 </html>
