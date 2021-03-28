@@ -5,7 +5,7 @@ let timeAvailable = 0;
 let tasks = [];
 let numTasks = 0;
 let timeNeeded = 0;
-let yourScheduel = [];
+let yourSchedule = [];
 
 
 function addTime(event) {  //takes the data from the form and records it in some way
@@ -50,29 +50,53 @@ function getTasks(event) { //creates the next screen? might be worth just making
 
   thingtoadd = document.createElement("div");
   thingtoadd.class = "continue";
-  thingtoadd.id = "addEvent";
+  thingtoadd.id = "generate";
   otherthingtoadd = document.createElement("input");
   thingtoadd.appendChild(otherthingtoadd);
   otherthingtoadd.type="button";  
   otherthingtoadd.addEventListener("click",getSchedule);
-  otherthingtoadd.value = "Continue";
+  otherthingtoadd.value = "Generate My Schedule!";
   document.body.appendChild(thingtoadd);
-
-  //<div class="actions" id="addTime"><input type="submit" value="Add Time" onclick="addTime();"></div>
-
-   // <div class="continue" id="continue"><input type="button" value="Continue" onclick="getTasks();" /></div> 
 } 
 
 function addTask() { //take the data from the form and records it in some way
   tasks[numTasks] = {name:document.getElementById("starttime").value,due: document.getElementById("date").value, estimatedTime: document.getElementById("estimatedtime").value};
   timeNeeded+=tasks[numTasks].estimatedTime;
   numTasks+=1;
-  
+
 }
 
 function getSchedule(event) { //switches you to the schedule screen, as before might be worth just hyperlinking it
   generateSchedule();
-  //creates/passes in the newly made schedule
+
+  let toremove = document.getElementById("instructions");
+  toremove.remove();
+  toremove = document.getElementById("inputlist");
+  toremove.remove();
+  toremove = document.getElementById("addEvent");
+  toremove.remove(); 
+  toremove = document.getElementById("generate");
+  toremove.remove(); 
+
+  for (task in yourSchedule)
+  {
+    let task = document.createElement("dl");
+    task.class = "task";
+    let date = document.createElement("dt");
+    date.innerHTML = task.date;
+    task.appendChild(date);
+    let type = document.createElement("dt");
+    type.innerHTML = task.workingon;
+    task.appendChild(type);
+    let from = document.createElement("dt");
+    from.innerHTML = task.timeStart;
+    task.appendChild(from);
+    let to = document.createElement("dt");
+    to.innerHTML = task.timeend;
+    task.appendChild(to);
+    document.body.appendChild(task);
+  }
+
 }
 
 function calculateTime(start,end) {
