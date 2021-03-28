@@ -43,7 +43,7 @@ function getTasks(event) { //creates the next screen? might be worth just making
   thingtochange.remove();
 
   let thingtoadd = document.createElement("div");
-  thingtoadd.class = "actions";
+  thingtoadd.class = "action";
   thingtoadd.id = "addEvent";
   let otherthingtoadd = document.createElement("input");
   thingtoadd.appendChild(otherthingtoadd);
@@ -52,11 +52,11 @@ function getTasks(event) { //creates the next screen? might be worth just making
   document.body.appendChild(thingtoadd);
 
   thingtoadd = document.createElement("div");
-  thingtoadd.class = "continue";
+  thingtoadd.class = "action";
   thingtoadd.id = "generate";
   otherthingtoadd = document.createElement("input");
   thingtoadd.appendChild(otherthingtoadd);
-  otherthingtoadd.type="button";  
+  otherthingtoadd.type="submit";  
   otherthingtoadd.addEventListener("click",getSchedule);
   otherthingtoadd.value = "Generate My Schedule!";
   document.body.appendChild(thingtoadd);
