@@ -189,4 +189,5 @@ function generateSchedule() {
         i =i+1;
     } while(workDone<tasks[j].estimatedTime);
   }
+
 }
